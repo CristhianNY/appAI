@@ -1,0 +1,4 @@
+<resources>
+    <string name="error_getting_marvel_characters">Error getting marvel characters</string>
+    <string name="loading">Loading</string>
+</resources>

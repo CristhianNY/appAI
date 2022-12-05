@@ -1,0 +1,57 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+}
+apply from: '../ktlint.gradle.kts'
+android {
+    flavorDimensions "version"
+    productFlavors {
+        dev {
+            dimension "version"
+        }
+        prod {
+            dimension "version"
+        }
+    }
+
+
+    compileSdkVersion 32
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 32
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    testImplementation "junit:junit:$junit_version"
+    implementation project(":support")
+    testImplementation("org.mockito:mockito-core:$mockito_version")
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlin"
+    testImplementation "androidx.arch.core:core-testing:$arch_core_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$core_ktx_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$android_core_ktx_version"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$core_ktx_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle"
+    testImplementation "androidx.test.ext:junit:$junit_androidx_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+    androidTestImplementation "androidx.arch.core:core-testing:$mockito_version"
+    kapt "com.google.dagger:hilt-compiler:$dagger_hilt"
+    implementation "com.google.dagger:hilt-android:$dagger_hilt"
+}
+preBuild.dependsOn(ktlintFormat, ktlintCheck)
