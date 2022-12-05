@@ -109,7 +109,7 @@ dependencies {
     implementation project(":domain")
     implementation project(":data")
     implementation project(":support")
-    implementation project(":feature-marvel-characters")
+    implementation project(":feature-gpt3")
     implementation app_android.values()
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.google.code.gson:gson:$gson_version"

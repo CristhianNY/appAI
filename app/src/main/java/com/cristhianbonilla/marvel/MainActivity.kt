@@ -3,7 +3,7 @@ package com.cristhianbonilla.marvel
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.cristhianbonilla.feature_marvel_characters.MarvelActivity
+import com.cristhianbonilla.featuregpt3.Gpt3Activity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun goToOtherActivity() {
-        startActivity(Intent(this, MarvelActivity::class.java))
+        startActivity(Intent(this, Gpt3Activity::class.java))
         finish()
     }
 }

@@ -1,0 +1,70 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'dagger.hilt.android.plugin'
+}
+
+apply from: '../ktlint.gradle.kts'
+
+android {
+    namespace 'com.cristhianbonilla.featuregpt3'
+    flavorDimensions "version"
+    productFlavors {
+        dev {
+            dimension "version"
+        }
+        prod {
+            dimension "version"
+        }
+    }
+
+    flavorDimensions 'version'
+    compileSdkVersion 32
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 32
+        versionCode 10
+        versionName "3.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+    buildFeatures {
+        dataBinding true
+    }
+}
+
+dependencies {
+    kapt "com.google.dagger:hilt-compiler:$dagger_hilt"
+    implementation project(":resources")
+    implementation project(":domain")
+    implementation project(":support")
+    implementation app_android.values()
+    testImplementation "junit:junit:$junit_version"
+    testImplementation("org.mockito:mockito-core:$mockito_version")
+    testImplementation "androidx.arch.core:core-testing:$arch_core_version"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$core_ktx_version"
+    testImplementation "androidx.test:core:$test_core"
+    testImplementation "androidx.test.ext:truth:$test_truth"
+    testImplementation "com.google.truth:truth:$google_truth_truth"
+    implementation "com.airbnb.android:lottie:$lottie_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+    androidTestImplementation "androidx.arch.core:core-testing:$mockito_version"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
+}
+preBuild.dependsOn(ktlintFormat, ktlintCheck)

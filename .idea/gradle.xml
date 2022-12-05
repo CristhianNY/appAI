@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/data" />
             <option value="$PROJECT_DIR$/domain" />
+            <option value="$PROJECT_DIR$/feature-gpt3" />
             <option value="$PROJECT_DIR$/feature-marvel-characters" />
             <option value="$PROJECT_DIR$/resources" />
             <option value="$PROJECT_DIR$/support" />
