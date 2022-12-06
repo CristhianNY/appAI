@@ -1,4 +1,4 @@
-package com.cristhianbonilla.marvel.di
+package com.cristhianbonilla.appAI.di
 
 import com.cristhianbonilla.data.characters.api.MarvelApi
 import dagger.Module

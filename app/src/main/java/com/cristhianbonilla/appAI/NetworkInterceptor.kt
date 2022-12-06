@@ -1,5 +1,6 @@
-package com.cristhianbonilla.marvel
+package com.cristhianbonilla.appAI
 
+import com.cristhianbonilla.marvel.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.logging.HttpLoggingInterceptor
 

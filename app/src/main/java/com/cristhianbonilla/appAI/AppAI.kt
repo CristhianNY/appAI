@@ -1,4 +1,4 @@
-package com.cristhianbonilla.marvel
+package com.cristhianbonilla.appAI
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

@@ -1,4 +1,4 @@
-package com.cristhianbonilla.marvel.di
+package com.cristhianbonilla.appAI.di
 
 import com.cristhianbonilla.data.characters.data_source.MarvelDataSource
 import com.cristhianbonilla.data.characters.data_source.MarvelDataSourceImpl

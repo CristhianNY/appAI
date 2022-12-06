@@ -1,4 +1,4 @@
-package com.cristhianbonilla.marvel.di
+package com.cristhianbonilla.appAI.di
 
 import com.cristhianbonilla.domain.characters.usecase.GetCharacterByIdUseCase
 import com.cristhianbonilla.domain.characters.usecase.GetCharacterByIdUseCaseImpl

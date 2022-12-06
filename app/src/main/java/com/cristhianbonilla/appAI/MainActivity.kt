@@ -1,9 +1,10 @@
-package com.cristhianbonilla.marvel
+package com.cristhianbonilla.appAI
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.cristhianbonilla.featuregpt3.Gpt3Activity
+import com.cristhianbonilla.marvel.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

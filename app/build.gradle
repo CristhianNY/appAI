@@ -8,7 +8,7 @@ plugins {
 }
 apply from: '../ktlint.gradle.kts'
 
-def APP_NAME = 'Marvel'
+def APP_NAME = 'APPAI'
 android {
     lintOptions {
         disable 'NullSafeMutableLiveData'
@@ -60,7 +60,7 @@ android {
             buildConfigField "String", "BASE_URL", '"https://gateway.marvel.com:443/v1/"'
             buildConfigField "String", "PRIVATE_KEY", '"3bd82634a845f2e13a8bdcd85a33a275639e5fec"'
             buildConfigField "String", "PUBLIC_KEY", '"094fd5135afba6378bc683013cd77bb7"'
-            resValue "string", "app_name", "Marvel"
+            resValue "string", "app_name", "AppAI"
         }
     }
 
@@ -104,6 +104,7 @@ repositories {
 }
 
 dependencies {
+    implementation 'androidx.test.ext:junit-ktx:1.1.4'
     kapt "com.google.dagger:hilt-compiler:$dagger_hilt"
     implementation project(":resources")
     implementation project(":domain")

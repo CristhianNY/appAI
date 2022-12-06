@@ -1,7 +1,7 @@
-package com.cristhianbonilla.marvel.di
+package com.cristhianbonilla.appAI.di
 
+import com.cristhianbonilla.appAI.NetworkInterceptor
 import com.cristhianbonilla.marvel.BuildConfig
-import com.cristhianbonilla.marvel.NetworkInterceptor
 import com.cristhianbonilla.support.config.md5
 import dagger.Module
 import dagger.Provides
