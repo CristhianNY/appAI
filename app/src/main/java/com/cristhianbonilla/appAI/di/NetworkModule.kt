@@ -2,6 +2,7 @@ package com.cristhianbonilla.appAI.di
 
 import com.cristhianbonilla.appAI.NetworkInterceptor
 import com.cristhianbonilla.marvel.BuildConfig
+import com.cristhianbonilla.marvel.BuildConfig.PRIVATE_KEY
 import com.cristhianbonilla.support.config.md5
 import dagger.Module
 import dagger.Provides
@@ -30,7 +31,7 @@ class NetworkModule {
     @Provides
     @Singleton
     fun provideRetrofit(httpClient: OkHttpClient): Retrofit {
-        return Retrofit.Builder().baseUrl(BuildConfig.BASE_URL)
+        return Retrofit.Builder().baseUrl(BuildConfig.GPT3_BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(httpClient)
             .build()
@@ -48,16 +49,16 @@ class NetworkModule {
 
         httpClient.addInterceptor { chain ->
             val ts = "1"
-            val hash = ts.plus(BuildConfig.PRIVATE_KEY).plus(BuildConfig.PUBLIC_KEY)
+            val hash = ts.plus(PRIVATE_KEY)
             val original = chain.request()
             val originalHttpUrl =
                 original.url.newBuilder().addQueryParameter(TIME_STAMP_KEY, ts)
-                    .addQueryParameter(API_KEY, BuildConfig.PUBLIC_KEY)
                     .addQueryParameter(HASH_KEY, hash.md5()).build()
 
             val requestBuilder = original.newBuilder().url(originalHttpUrl)
             requestBuilder.header(CONTENT_TYPE_KEY, CONTENT_TYPE)
             requestBuilder.header(HEADER_ACCEPT_KEY, HEADER_ACCEPT)
+            requestBuilder.addHeader("Authorization", "Bearer $PRIVATE_KEY")
 
             val request = requestBuilder.build()
             chain.proceed(request)
