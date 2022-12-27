@@ -33,7 +33,50 @@ class Gpt3ViewModel @Inject constructor(
             when (
                 val response = requestCompletionFromGpt3UseCase(
                     RequestCompletionFromGpt3UseCase.Params(
-                        Gpt3RequestModel(7, "text-davinci-003", text, 1)
+                        Gpt3RequestModel(
+                            frequencyPenalty = 0.0,
+                            maxTokens = 100,
+                            model = "text-davinci-003",
+                            prompt = text,
+                            presencePenalty = 0.6,
+                            stop = listOf("Human", "AI"),
+                            temperature = 0.9,
+                            topP = 1,
+                            user = "user1"
+                        )
+                    )
+                )
+            ) {
+                is ResultDomain.Success -> {
+                    insertMessageToList(
+                        ChatType.RECEIVER_MESSAGE,
+                        response.data?.GPT3ChoiceEntities?.first()?.text.orEmpty(),
+                        response.data?.id.orEmpty()
+                    )
+                    setState(GPT3State.ShowGpt3ResponseState(response.data))
+                }
+
+                is ResultDomain.Error -> setState(GPT3State.Gpt3Error)
+            }
+        }
+    }
+
+    fun cleanConversation() {
+        setState(GPT3State.Loading)
+        viewModelScope.launch {
+            when (
+                val response = requestCompletionFromGpt3UseCase(
+                    RequestCompletionFromGpt3UseCase.Params(
+                        Gpt3RequestModel(
+                            frequencyPenalty = 0.0,
+                            maxTokens = 100,
+                            model = "text-davinci-003",
+                            presencePenalty = 0.6,
+                            stop = listOf("Human", "AI"),
+                            temperature = 0.9,
+                            topP = 1,
+                            user = "user3"
+                        )
                     )
                 )
             ) {
@@ -69,26 +112,18 @@ class Gpt3ViewModel @Inject constructor(
     }
 
     private fun getUniqueId(): String {
-        // Genera un string aleatorio
         var randomId = UUID.randomUUID().toString()
-
-        // Bucle hasta que se encuentre un id único
         var foundId = false
         while (!foundId) {
-            // Itera sobre la lista de objetos
             for (obj in _chatModelList.value.orEmpty()) {
-                // Si encuentra un id igual al string aleatorio, vuelve a generar un string aleatorio y vuelve al inicio del bucle
                 if (obj.id == randomId) {
                     randomId = UUID.randomUUID().toString()
                     break
                 }
             }
-
-            // Si no encuentra ningún id igual, sale del bucle
             foundId = true
         }
 
-        // Devuelve el id único
         return randomId
     }
 

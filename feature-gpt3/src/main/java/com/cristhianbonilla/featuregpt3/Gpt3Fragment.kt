@@ -15,6 +15,8 @@ import com.cristhianbonilla.featuregpt3.state.GPT3State.ShowGpt3ResponseState
 import com.cristhianbonilla.support.config.fragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
 
+private const val CLEAN_CONVERSATION = "<|endoftext|>"
+
 @AndroidEntryPoint
 class Gpt3Fragment : Fragment() {
 
@@ -41,6 +43,10 @@ class Gpt3Fragment : Fragment() {
     private fun iniView() {
         binding.sendButton.setOnClickListener {
             viewModel.sendPetitionToChatGpt3(binding.message.text.toString())
+        }
+
+        binding.cleanChat.setOnClickListener {
+            viewModel.cleanConversation()
         }
     }
 
