@@ -1,10 +1,9 @@
-package com.cristhianbonilla.appAI
+package com.cristhianbonilla.appai
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.cristhianbonilla.featuregpt3.Gpt3Activity
-import com.cristhianbonilla.marvel.R
+import com.cristhianbonilla.feature_home.HomeActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun goToOtherActivity() {
-        startActivity(Intent(this, Gpt3Activity::class.java))
+        startActivity(Intent(this, HomeActivity::class.java))
         finish()
     }
 }

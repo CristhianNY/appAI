@@ -10,9 +10,6 @@ apply from: '../ktlint.gradle.kts'
 
 def APP_NAME = 'APPAI'
 android {
-    lintOptions {
-        disable 'NullSafeMutableLiveData'
-    }
     flavorDimensions 'version'
 
     compileSdkVersion 32
@@ -33,11 +30,12 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.cristhianbonilla.app"
-        minSdkVersion 21
-        targetSdkVersion 32
-        versionCode 10
-        versionName "3.0"
+        applicationId "com.cristhianbonilla.appai"
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -48,18 +46,18 @@ android {
             applicationIdSuffix ".dev"
             versionNameSuffix "-dev"
             signingConfig signingConfigs.debug
-            buildConfigField "String", "BASE_URL", '"https://gateway.marvel.com:443/v1/"'
-            buildConfigField "String", "PRIVATE_KEY", '"3bd82634a845f2e13a8bdcd85a33a275639e5fec"'
-            buildConfigField "String", "PUBLIC_KEY", '"094fd5135afba6378bc683013cd77bb7"'
-            resValue "string", "app_name", "DEV Marvel"
+            buildConfigField "String", "GPT3_BASE_URL", '"https://api.openai.com/"'
+            buildConfigField "String", "PRIVATE_KEY", '"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"'
+            buildConfigField "String", "OPENAI_OGANIZATION", '"org-4ocQd9c7zqlbmwhZZAjBknOi"'
+            resValue "string", "app_name", "DEV APPAI"
         }
 
         prod {
             dimension "version"
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "BASE_URL", '"https://gateway.marvel.com:443/v1/"'
-            buildConfigField "String", "PRIVATE_KEY", '"3bd82634a845f2e13a8bdcd85a33a275639e5fec"'
-            buildConfigField "String", "PUBLIC_KEY", '"094fd5135afba6378bc683013cd77bb7"'
+            buildConfigField "String", "GPT3_BASE_URL", '"https://api.openai.com/"'
+            buildConfigField "String", "PRIVATE_KEY", '"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"'
+            buildConfigField "String", "OPENAI_OGANIZATION", '"org-4ocQd9c7zqlbmwhZZAjBknOi"'
             resValue "string", "app_name", "AppAI"
         }
     }
@@ -97,20 +95,20 @@ android {
     buildFeatures {
         dataBinding true
     }
-}
-repositories {
-    google()
-    mavenCentral()
+    lint {
+        disable 'NullSafeMutableLiveData'
+    }
+    namespace 'com.cristhianbonilla.appai'
 }
 
 dependencies {
     implementation 'androidx.test.ext:junit-ktx:1.1.4'
     kapt "com.google.dagger:hilt-compiler:$dagger_hilt"
-    implementation project(":resources")
+    implementation project(":resource")
     implementation project(":domain")
     implementation project(":data")
     implementation project(":support")
-    implementation project(":feature-gpt3")
+    implementation project(":feature-home")
     implementation app_android.values()
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.google.code.gson:gson:$gson_version"

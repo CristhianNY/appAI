@@ -7,22 +7,13 @@
 
     <ImageView
         android:id="@+id/marvelImage"
-        android:layout_width="@dimen/marvel_logo_size"
-        android:layout_height="@dimen/marvel_logo_size"
-        android:src="@drawable/ic_marvel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/marvel_animation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_dashboard_black_24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/marvelImage"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/thor_vs_captain_animation" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

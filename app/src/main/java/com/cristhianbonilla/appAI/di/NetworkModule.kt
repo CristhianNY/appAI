@@ -1,8 +1,7 @@
-package com.cristhianbonilla.appAI.di
-
-import com.cristhianbonilla.appAI.NetworkInterceptor
-import com.cristhianbonilla.marvel.BuildConfig
-import com.cristhianbonilla.marvel.BuildConfig.PRIVATE_KEY
+package com.cristhianbonilla.appai.di
+import com.cristhianbonilla.appai.BuildConfig
+import com.cristhianbonilla.appai.BuildConfig.PRIVATE_KEY
+import com.cristhianbonilla.appai.NetworkInterceptor
 import com.cristhianbonilla.support.config.md5
 import dagger.Module
 import dagger.Provides

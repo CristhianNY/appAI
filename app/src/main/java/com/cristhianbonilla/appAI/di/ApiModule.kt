@@ -1,6 +1,5 @@
-package com.cristhianbonilla.appAI.di
+package com.cristhianbonilla.appai.di
 
-import com.cristhianbonilla.data.characters.api.MarvelApi
 import com.cristhianbonilla.data.chatgpt3.api.Gpt3APi
 import dagger.Module
 import dagger.Provides
@@ -12,11 +11,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class ApiModule {
-    @Singleton
-    @Provides
-    fun provideMarvelApi(retrofit: Retrofit): MarvelApi {
-        return retrofit.create(MarvelApi::class.java)
-    }
 
     @Singleton
     @Provides

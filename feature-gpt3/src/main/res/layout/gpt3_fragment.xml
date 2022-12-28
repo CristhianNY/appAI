@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.cristhianbonilla.featuregpt3.Gpt3ViewModel" />
+            type="com.cristhianbonilla.feature_gpt3.Gpt3ViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -10,7 +10,7 @@ plugins {
 apply from: '../ktlint.gradle.kts'
 
 android {
-    namespace 'com.cristhianbonilla.featuregpt3'
+    namespace 'com.cristhianbonilla.feature_gpt3'
     flavorDimensions "version"
     productFlavors {
         dev {
@@ -28,8 +28,6 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 32
-        versionCode 10
-        versionName "3.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -50,8 +48,11 @@ android {
 }
 
 dependencies {
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     kapt "com.google.dagger:hilt-compiler:$dagger_hilt"
-    implementation project(":resources")
+    implementation project(":resource")
     implementation project(":domain")
     implementation project(":support")
     implementation app_android.values()
