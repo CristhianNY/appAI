@@ -1,11 +1,13 @@
 package com.cristhianbonilla.feature_home
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.cristhianbonilla.create_new_sermon.SermonActivity
 import com.cristhianbonilla.featureHome.R
 import com.cristhianbonilla.featureHome.databinding.ActivityHomeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -35,5 +37,10 @@ class HomeActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        binding.fab.setOnClickListener {
+            val intent = Intent(this, SermonActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

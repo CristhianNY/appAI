@@ -10,7 +10,7 @@ plugins {
 apply from: '../ktlint.gradle.kts'
 
 android {
-    namespace 'com.cristhianbonilla.feature_gpt3'
+    namespace 'com.cristhianbonilla.createNewSermon'
     flavorDimensions "version"
     productFlavors {
         dev {
