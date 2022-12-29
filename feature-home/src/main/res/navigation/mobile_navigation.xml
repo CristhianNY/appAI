@@ -2,36 +2,24 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/home_navigation"
-    app:startDestination="@+id/navigation_home_screen">
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
 
     <fragment
-        android:id="@+id/navigation_home_screen"
+        android:id="@+id/navigation_home"
         android:name="com.cristhianbonilla.feature_home.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_search_sermon_screen"
+        android:id="@+id/navigation_dashboard"
         android:name="com.cristhianbonilla.feature_home.ui.dashboard.DashboardFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/navigation_news_screen"
+        android:id="@+id/navigation_notifications"
         android:name="com.cristhianbonilla.feature_home.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
-    <fragment
-        android:id="@+id/navigation_profile_fragment_screen"
-        android:name="com.cristhianbonilla.feature_home.ui.profile.ProfileFragment"
-        android:label="ProfileFragment"
-        tools:layout="@layout/fragment_profile"/>
-
-    <fragment
-        android:id="@+id/navigation_generate_new_sermon_screen"
-        android:name="com.cristhianbonilla.feature_home.ui.sermon_generator.SermonGeneratorFragment"
-        android:label="SermonGeneratorFragment"
-        tools:layout="@layout/fragment_sermon_generator"/>
-
 </navigation>
