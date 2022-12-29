@@ -18,8 +18,16 @@
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
+        android:id="@+id/navigation_sermon_transcription"
+        android:name="com.cristhianbonilla.feature_home.ui.sermon_transcription.SermonTranscriptionFragment"
+        android:label="@string/title_sermon_transcription"
+        tools:layout="@layout/fragment_sermon_transcription" />
+
+    <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.cristhianbonilla.feature_home.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+
+
 </navigation>
