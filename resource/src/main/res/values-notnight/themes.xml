@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.AppAI" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/amulet</item>
+        <item name="colorPrimaryVariant">@color/green_light</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/green_light</item>
+        <item name="buttonStyle">@style/ButtonStyle</item>
+    </style>
+
+    <style name="ButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/amulet</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="FabButton" parent="Widget.Design.FloatingActionButton">
+        <item name="android:backgroundTint">@color/amulet</item>
+    </style>
+
+</resources>

@@ -6,6 +6,19 @@
 
     <fragment
         android:id="@+id/createSermonFragment"
-        android:name="com.cristhianbonilla.create_new_sermon.CreateSermonFragment"
-        android:label="CreateSermonFragment" />
+        android:name="com.cristhianbonilla.create_new_sermon.create_sermon.CreateSermonFragment"
+        android:label="CreateSermonFragment" >
+        <action
+            android:id="@+id/action_createSermonFragment_to_sermonViewFragment"
+            app:destination="@id/sermonViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sermonViewFragment"
+        android:name="com.cristhianbonilla.create_new_sermon.view_sermon.SermonViewFragment"
+        android:label="SermonViewFragment" >
+        <argument
+            android:name="sermon"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
 </navigation>

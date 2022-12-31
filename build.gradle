@@ -50,7 +50,9 @@ buildscript {
                 navigationFragment: "androidx.navigation:navigation-fragment-ktx:$navigation_version",
                 material          : "com.google.android.material:material:$material_version",
                 junit             : "junit:junit:$junit_version",
-                glide             : "com.github.bumptech.glide:glide:$glide_version"
+                glide             : "com.github.bumptech.glide:glide:$glide_version",
+                textAnimations    : "com.daimajia.androidanimations:library:2.4@aar"
+
         ]
     }
 

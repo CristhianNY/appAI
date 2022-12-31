@@ -20,6 +20,9 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityHomeBinding.inflate(layoutInflater)
+
+        setSupportActionBar(binding.toolbar)
+
         setContentView(binding.root)
 
         val navView: BottomNavigationView = binding.navView

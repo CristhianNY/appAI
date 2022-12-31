@@ -1,0 +1,3 @@
+package com.cristhianbonilla.create_new_sermon.view_sermon
+
+class SermonViewModel

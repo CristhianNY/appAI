@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/sermonText"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:padding="16dp"
+                android:text="@string/sermon_example"
+                app:layout_constraintBottom_toTopOf="@+id/btnGeneratePdf"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGeneratePdf"
+                style="@style/ButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Generar un pdf"
+                android:textAllCaps="false"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+                app:layout_constraintBottom_toTopOf="@+id/btnShare"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnShare"
+                style="@style/ButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:text="Compartir"
+                android:backgroundTint="@color/green_light"
+                android:textAllCaps="false"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

@@ -7,4 +7,27 @@
         <item>5</item>
     </string-array>
 
+
+    <string-array name="spinner_items_category">
+        <item>Sermon</item>
+        <item>Sermon biblico</item>
+        <item>Matutina para adultos</item>
+        <item>Matutina para niños</item>
+        <item>Matutina para jovenes</item>
+        <item>Meditación</item>
+    </string-array>
+
+    <string name="sermon_example">Dios es una de las figuras centrales de la Biblia y es descrito de muchas maneras a lo largo del texto. Aquí hay algunos pasajes que hablan sobre Dios y sus características:
+
+"El Señor es bueno y su gran amor dura para siempre; su fidelidad continúa de generación en generación." (Salmo 100:5)
+
+"El Señor es mi roca, mi fortaleza y mi salvador. En él confiaré; él es mi escudo y la fuerza de mi vida. A él clamaré por ayuda, y él me salvará de mis enemigos." (Salmo 18:2-3)
+
+"Dios es amor; y el que permanece en amor, permanece en Dios y Dios en él." (1 Juan 4:16)
+
+"Porque Dios amó tanto al mundo que dio a su Hijo unigénito, para que todo el que cree en él no se pierda, sino que tenga vida eterna." (Juan 3:16)
+
+"Así que ahora, oh Israel, ¿qué pide de ti el Señor tu Dios? Solamente que temas al Señor tu Dios, que andes en todos sus caminos, que lo ames y que sirvas al Señor tu Dios con todo tu corazón y con toda tu alma." (Deuteronomio 10:12)
+
+Espero que estos pasajes le den una idea de algunas de las características de Dios y lo que él llama a sus seguidores a hacer. Si tiene alguna pregunta sobre estos pasajes o sobre cualquier otro tema en particular, no dude en preguntar.</string>
 </resources>

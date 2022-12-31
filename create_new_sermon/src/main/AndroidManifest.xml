@@ -4,7 +4,8 @@
     <application>
         <activity
             android:name="com.cristhianbonilla.create_new_sermon.SermonActivity"
-            android:exported="false">
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
